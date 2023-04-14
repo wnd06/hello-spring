@@ -1,6 +1,5 @@
 package hello.hellospring.controller;
 
-import hello.hellospring.HelloSpringApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class hellocontroller {
 
-    @GetMapping("hello")
-    public String hello(Model model) {
+    @GetMapping("hello") //접속할 url 주소!!
+    public String hello(Model model) { //변수 등록 하기 위해서 Model 사용!
         model.addAttribute("data","hello!!");
-        return "hello";
+        return "hello"; //어떤 파일 사용할지!!
     }
     @GetMapping("Hello-mvc")
     public String helloMvc(@RequestParam("name") String name, Model model) {
