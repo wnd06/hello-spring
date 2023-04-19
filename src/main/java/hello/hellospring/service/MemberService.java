@@ -10,11 +10,14 @@ public class MemberService {
 
     private final MemberRepository memberRepository;
 
+
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
 
-    //회원가입
+    /**
+    *회원가입
+     */
     public Long join(Member member) {
         // 같은 이름이 있는 중복 회원 x
         validateDuplicateMember(member);
